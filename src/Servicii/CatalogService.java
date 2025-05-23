@@ -214,4 +214,24 @@ public final class CatalogService {
             ex.printStackTrace();
         }
     }
+
+    /** Returnează departamentul cu numele dat, sau null dacă nu există. */
+    public Department getDepartmentByName(String nume) {
+        try {
+            return departmentDao.findByName(nume);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public List<Department> getAllDepartments() {
+        try {
+            return new DepartmentDao().findAll(); // sau ai deja o metodă DAO pentru findAll
+        } catch(SQLException e) {
+            e.printStackTrace();
+            return Collections.emptyList();
+        }
+    }
+
 }

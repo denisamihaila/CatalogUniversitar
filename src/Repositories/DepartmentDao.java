@@ -58,4 +58,22 @@ public class DepartmentDao {
         }
         return list;
     }
+
+    /** Găsește un departament după nume (exact match). */
+    public Department findByName(String numeDepartament) throws SQLException {
+        String sql = "SELECT * FROM department WHERE nume_departament = ?";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, numeDepartament);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return new Department(
+                            rs.getInt("id_departament"),
+                            rs.getString("nume_departament"),
+                            rs.getString("facultate")
+                    );
+                }
+            }
+        }
+        return null;
+    }
 }

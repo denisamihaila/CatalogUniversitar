@@ -87,16 +87,29 @@ public class Main {
                 case 5:
                     System.out.print("Cod materie: ");
                     String cod = sc.nextLine();
+
                     System.out.print("Denumire: ");
                     String den = sc.nextLine();
+
                     System.out.print("Credite: ");
-                    int cr = sc.nextInt(); sc.nextLine();
-                    System.out.print("Departament: ");
-                    String dept = sc.nextLine();
-                    Department d = new Department(dept, dept); // facultate same as dept for simplicity
-                    Course c = new Course(cod, den, cr, d);
+                    int cred = sc.nextInt(); sc.nextLine();
+
+                    System.out.print("Departament (nume exact): ");
+                    String numeDept = sc.nextLine();
+
+                    Department dept = svc.getDepartmentByName(numeDept);
+                    if (dept == null) {
+                        System.out.println("Departament inexistent: '" + numeDept + "'.");
+                        System.out.println("Te rog să foloseşti unul dintre următoarele nume:");
+                        svc.getAllDepartments().forEach(d ->
+                                System.out.println("  • " + d.getNumeDepartament())
+                        );
+                        break;
+                    }
+
+                    Course c = new Course(cod, den, cred, dept);
                     svc.adaugaMaterie(c);
-                    System.out.println("Materie adaugata: " + c);
+                    System.out.println("Materie adaugată: " + c.getDenumire() + " (" + c.getCodMaterie() + ")");
                     break;
                 case 6:
                     System.out.print("Cod materie: ");
