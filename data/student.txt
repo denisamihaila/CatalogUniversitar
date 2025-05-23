@@ -1,0 +1,8 @@
+Popescu Ana,2004-05-10,Informatică
+Ionescu Mihai,2003-11-22,Matematică
+Georgescu Alina,2004-02-15,Fizică
+Rusu Daniel,2002-12-01,Chimie
+Dumitrescu Ioana,2003-07-30,Biologie
+Marinescu Vlad,2004-08-20,Informatică
+Stan Elena,2002-03-12,Matematică
+Paraschiv Cristian,2003-09-05,Fizică

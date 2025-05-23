@@ -1,0 +1,8 @@
+CS101,Programare,6,Informatica
+CS102,Algoritmi,5,Informatica
+MA101,Algebra,6,Matematica
+MA102,Analiza,5,Matematica
+PH101,Mecanica,6,Fizica
+PH102,Optica,5,Fizica
+CH101,Chimie Generala,6,Chimie
+BI101,Biologie Celulara,6,Biologie
