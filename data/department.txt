@@ -1,5 +1,3 @@
 Informatica,FMI
 Matematica,FMI
-Fizica,Facultatea de Fizica
-Chimie,Facultatea de Chimie
-Biologie,Facultatea de Biologie
+CTI,FMI

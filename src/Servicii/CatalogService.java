@@ -11,7 +11,6 @@ import java.util.*;
 public final class CatalogService {
     private static CatalogService instance;
 
-    private final CourseRepo courseRepo = CourseRepo.getInstance();
     private final CourseOfferingRepo offeringRepo = CourseOfferingRepo.getInstance();
     private final Map<Integer, Student> studenti = new HashMap<>();
     private final Map<Integer, Professor> profesori = new HashMap<>();
@@ -37,11 +36,10 @@ public final class CatalogService {
     public Enrollment inscriereStudentLaCursCuData(int idStudent, int idOferta, LocalDate data) {
         Student s = studenti.get(idStudent);
         CourseOffering o = offeringRepo.get(idOferta);
-        // cream un Enrollment cu data dorită
         Enrollment e = new Enrollment(0, s, o, data);
         try {
-            int newId = enrollmentDao.insert(e);                  // persistăm în BD
-            e = new Enrollment(newId, s, o, data);                // actualizăm id-ul
+            int newId = enrollmentDao.insert(e);
+            e = new Enrollment(newId, s, o, data);
             inscrieri.put(newId, e);
             s.adaugaInscriere(e);
         } catch (SQLException ex) {
@@ -126,10 +124,8 @@ public final class CatalogService {
     // 8. Înregistrare notă pentru student
     public int inregistrareNota(int idInscriere, double valoareNota) {
         try {
-            // 1) inserez în baza de date și obțin id_nota
             int idNota = enrollmentDao.insertGrade(idInscriere, valoareNota);
 
-            // 2) în memorie, găsesc obiectul Enrollment și îi atașez nota
             Enrollment e = enrollmentDao.findById(idInscriere);
             if (e != null) {
                 Grade g = new Grade(idNota, e, valoareNota);
@@ -176,11 +172,11 @@ public final class CatalogService {
         }
     }
 
-    // metode auxiliare: adaugă direct în BD
+    // metode auxiliare
     public void adaugaStudent(Student s) {
         try {
-            studentDao.insert(s);        // persist în BD → s.getId() este setat de DAO
-            studenti.put(s.getId(), s);  // adaugi şi în harta locală
+            studentDao.insert(s);
+            studenti.put(s.getId(), s);
             audit.log("adaugare_student");
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -189,8 +185,8 @@ public final class CatalogService {
 
     public void adaugaProfesor(Professor p) {
         try {
-            professorDao.insert(p);      // persist în BD → p.getId() este setat de DAO
-            profesori.put(p.getId(), p); // adaugi şi în harta locală
+            professorDao.insert(p);
+            profesori.put(p.getId(), p);
             audit.log("adaugare_profesor");
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -215,7 +211,6 @@ public final class CatalogService {
         }
     }
 
-    /** Returnează departamentul cu numele dat, sau null dacă nu există. */
     public Department getDepartmentByName(String nume) {
         try {
             return departmentDao.findByName(nume);
@@ -227,7 +222,7 @@ public final class CatalogService {
 
     public List<Department> getAllDepartments() {
         try {
-            return new DepartmentDao().findAll(); // sau ai deja o metodă DAO pentru findAll
+            return new DepartmentDao().findAll();
         } catch(SQLException e) {
             e.printStackTrace();
             return Collections.emptyList();

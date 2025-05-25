@@ -10,11 +10,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // 1) Reinitialize DB schema and tables
         DBInitializer.initialize();
-        // 2) Load initial data from text files
         new DataLoader().loadAll();
-        // 3) Start interactive menu
         runMenu();
     }
 
@@ -22,7 +19,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         CatalogService svc = CatalogService.getInstance();
         while (true) {
-            System.out.println("\nCe vreti sa faceti?");
+            System.out.println("\n----------MENIU----------");
             System.out.println("1. Inscriere student la curs");
             System.out.println("2. Retragere student din curs");
             System.out.println("3. Listare cursuri pentru semestru");

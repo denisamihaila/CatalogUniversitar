@@ -1,5 +1,10 @@
-Dr. Vasile Pop,Lect. univ. dr.,Informatica
-Dr. Maria Ionescu,Conf. univ. dr.,Matematica
-Dr. Andrei Georgescu,Lect. univ. dr.,Fizica
-Dr. Elena Radu,Prof. univ. dr.,Chimie
-Dr. Sorin Pavel,Conf. univ. dr.,Biologie
+Andrei Popescu,Prof. univ. dr.,Informatica
+Maria Georgescu,Conf. univ. dr.,Matematica
+Elena Rusu,Lect. univ. dr.,CTI
+Bogdan Stan,Prof. dr.,Informatica
+Laura Dobre,Conf. dr.,Matematica
+Ion Ionescu,Lect. univ.,CTI
+Adriana Pop,Lect. univ.,Informatica
+Florin Diaconu,Prof. univ.,Matematica
+Ana Prodan,Conf. dr.,CTI
+Marius Tudor,Prof. dr.,Informatica

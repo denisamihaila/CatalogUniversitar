@@ -78,7 +78,7 @@ public class EnrollmentDao {
         }
     }
 
-    // CREATE grade pentru o înscriere, fără dependență de obiectul Grade
+    // CREATE
     public int insertGrade(int idInscriere, double valoareNota) throws SQLException {
         String sql = "INSERT INTO grade (id_inscriere, valoare_nota) VALUES (?, ?)";
         try (PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -90,7 +90,6 @@ public class EnrollmentDao {
                 throw new SQLException("Inserare grade eșuată, niciun rând afectat.");
             }
 
-            // preluăm id_nota generat
             try (ResultSet rs = ps.getGeneratedKeys()) {
                 if (rs.next()) {
                     return rs.getInt(1);

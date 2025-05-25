@@ -10,8 +10,8 @@ import java.util.List;
 
 public class CourseOfferingDao {
     private final Connection conn = DBConnection.getInstance().getConnection();
-    private final CourseDao courseDao       = new CourseDao();
-    private final ProfessorDao profDao      = new ProfessorDao();
+    private final CourseDao courseDao = new CourseDao();
+    private final ProfessorDao profDao = new ProfessorDao();
 
     // CREATE
     public void insert(CourseOffering o) throws SQLException {

@@ -23,7 +23,7 @@ public class CourseDao {
         }
     }
 
-    // READ by code
+    // READ
     public Course findByCod(String cod) throws SQLException {
         String sql = "SELECT * FROM course WHERE cod_materie = ?";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {

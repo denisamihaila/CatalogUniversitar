@@ -59,7 +59,6 @@ public class DepartmentDao {
         return list;
     }
 
-    /** Găsește un departament după nume (exact match). */
     public Department findByName(String numeDepartament) throws SQLException {
         String sql = "SELECT * FROM department WHERE nume_departament = ?";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {

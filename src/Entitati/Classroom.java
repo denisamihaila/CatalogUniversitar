@@ -2,7 +2,7 @@ package Entitati;
 
 public class Classroom {
     private int idSala;
-    private final String numarSala; // poate conține și litere
+    private final String numarSala;
     private final int capacitate;
     private final TipSala tip;
 

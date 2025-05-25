@@ -120,14 +120,11 @@ public class DataLoader {
     }
 
     private void loadGrades() {
-        System.out.println("Încep încărcare note…");
         List<String> lines = readLines("grade.txt");
-        System.out.println("Found " + lines.size() + " grade lines");
 
         EnrollmentDao enrollmentDao = new EnrollmentDao();
 
         for (String line : lines) {
-            System.out.println("Procesăm: " + line);
             String[] f = line.split(",");
             if (f.length < 6) {
                 System.err.println("  → Linia are prea puține câmpuri!");
@@ -155,7 +152,6 @@ public class DataLoader {
                         name, cod, sem, an, date);
                 if (idIns != null) {
                     int idNota = service.inregistrareNota(idIns, val);
-                    System.out.println("  → Nota inserată cu id_nota=" + idNota);
                 } else {
                     System.err.println("  → NU s-a găsit înscriere pentru: " + line);
                 }

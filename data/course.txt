@@ -1,8 +1,25 @@
-CS101,Programare,6,Informatica
-CS102,Algoritmi,5,Informatica
-MA101,Algebra,6,Matematica
-MA102,Analiza,5,Matematica
-PH101,Mecanica,6,Fizica
-PH102,Optica,5,Fizica
-CH101,Chimie Generala,6,Chimie
-BI101,Biologie Celulara,6,Biologie
+CS101,Tehnici Web,6,Informatica
+CS102,Programarea Algoritmilor,5,Informatica
+CS103,ASC,4,Informatica
+CS104,LFA,5,Informatica
+CS105,POO,6,Informatica
+CS106,SGBD,4,Informatica
+CS107,Algoritmi Fundamentali,5,Informatica
+CS108,Algoritmi Avansati,5,Informatica
+CS109,PAO,6,Informatica
+CS110,Inginerie Software,5,Informatica
+CS111,Securitatea Sistemelor Informatice,6,Informatica
+MA101,Algebra,4,Matematica
+MA102,Analiza Matematica,5,Matematica
+MA103,Probabilitati,6,Matematica
+MA104,Statistica,5,Matematica
+MA105,Calcul Numeric,4,Matematica
+MA106,Criptografie,6,Matematica
+CTI101,Fizica,5,CTI
+CTI102,Sisteme de Operare,6,CTI
+CTI103,Baze de Date,5,CTI
+CTI104,Structuri de Date,6,CTI
+CTI105,Electronica,5,CTI
+CTI106,Compilatoare,4,CTI
+CTI107,Robotica,5,CTI
+CTI108,Blockchain,5,CTI
