@@ -34,10 +34,15 @@ Proiect realizat în cadrul materiei Programare Avansată pe Obiecte, în limbaj
 ### Fișierele cu date de intrare și structura acestora
 course.txt: `<codMaterie>,<denumire>,<nrCredite>,<numeDepartament>`
 
-courseOffering.txt: <codMaterie>,<semestru>,<an>
-department.txt: <numeDepartament>,<facultate>
-enrollment.txt: <numeStudent>,<codMaterie>,<semestru>,<an>,<dataInscrierii>
-grade.txt: <numeStudent>,<codMaterie>,<semestru>,<an>,<dataInscrierii>,<valoareNota>
-professor.txt: <numeProfesor>,<titluDidactic>,<numeDepartament>
-student.txt: <numeStudent>,<dataNasterii>,<specializare>
+courseOffering.txt: `<codMaterie>,<semestru>,<an>`
+
+department.txt: `<numeDepartament>,<facultate>`
+
+enrollment.txt: `<numeStudent>,<codMaterie>,<semestru>,<an>,<dataInscrierii>`
+
+grade.txt: `<numeStudent>,<codMaterie>,<semestru>,<an>,<dataInscrierii>,<valoareNota>`
+
+professor.txt: `<numeProfesor>,<titluDidactic>,<numeDepartament>`
+
+student.txt: `<numeStudent>,<dataNasterii>,<specializare>`
 
