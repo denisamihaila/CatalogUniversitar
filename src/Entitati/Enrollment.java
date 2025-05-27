@@ -17,8 +17,7 @@ public class Enrollment {
         this.dataInscrierii = dataInscrierii;
     }
 
-    public Enrollment(int idInscriere, Student student,
-                      CourseOffering oferta, LocalDate dataInscrierii) {
+    public Enrollment(int idInscriere, Student student, CourseOffering oferta, LocalDate dataInscrierii) {
         this(student, oferta, dataInscrierii);
         this.idInscriere = idInscriere;
     }

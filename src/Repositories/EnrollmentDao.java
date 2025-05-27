@@ -115,7 +115,6 @@ public class EnrollmentDao {
                     int idNota = rs.getInt("id_nota");
                     int idIns = rs.getInt("id_inscriere");
                     double val = rs.getDouble("valoare_nota");
-                    // citește enrollment-ul ca obiect
                     Enrollment e = findById(idIns);
                     list.add(new Grade(idNota, e, val));
                 }
