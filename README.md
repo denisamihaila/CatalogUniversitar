@@ -33,6 +33,7 @@ Proiect realizat în cadrul materiei Programare Avansată pe Obiecte, în limbaj
 ## Detalii implementare proiect
 ### Fișierele cu date de intrare și structura acestora
 course.txt: `<codMaterie>,<denumire>,<nrCredite>,<numeDepartament>`
+
 courseOffering.txt: <codMaterie>,<semestru>,<an>
 department.txt: <numeDepartament>,<facultate>
 enrollment.txt: <numeStudent>,<codMaterie>,<semestru>,<an>,<dataInscrierii>
