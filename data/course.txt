@@ -1,12 +1,12 @@
 CS101,Tehnici Web,6,Informatica
 CS102,Programarea Algoritmilor,5,Informatica
-CS103,ASC,4,Informatica
-CS104,LFA,5,Informatica
-CS105,POO,6,Informatica
+CS103,Arhitectura Sistemelor de Calcul,4,Informatica
+CS104,Limbaje Formale si Automate,5,Informatica
+CS105,Programare Orientata pe Obiecte,6,Informatica
 CS106,SGBD,4,Informatica
 CS107,Algoritmi Fundamentali,5,Informatica
 CS108,Algoritmi Avansati,5,Informatica
-CS109,PAO,6,Informatica
+CS109,Programare Avansata pe Obiecte,6,Informatica
 CS110,Inginerie Software,5,Informatica
 CS111,Securitatea Sistemelor Informatice,6,Informatica
 MA101,Algebra,4,Matematica
