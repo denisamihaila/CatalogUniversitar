@@ -25,8 +25,24 @@ Proiect realizat în cadrul materiei Programare Avansată pe Obiecte, în limbaj
   - DAO-ul folosește DBConnection pentru obținerea unei conexiuni java.sql.Connection
 - DBInitializer resetează și creează schema MySQL cu tabelele și cheile externe, folosind AUTO_INCREMENT acolo unde e cazul
 - DataLoader citește fișierele *.txt și apelează serviciul pentru a popula inițial baza de date
-
-
 ### 2. Realizarea unui serviciu de audit
 - Clasa AuditService scrie într-un fișier CSV (Resources/audit.csv) numele acțiunii și timestamp-ul
 - Fiecare metodă din CatalogService apelată scrie un rând în fișierul de audit
+
+
+## Detalii implementare proiect
+### Fișierele cu date de intrare și structura acestora
+course.txt: `<codMaterie>,<denumire>,<nrCredite>,<numeDepartament>`
+
+courseOffering.txt: `<codMaterie>,<semestru>,<an>`
+
+department.txt: `<numeDepartament>,<facultate>`
+
+enrollment.txt: `<numeStudent>,<codMaterie>,<semestru>,<an>,<dataInscrierii>`
+
+grade.txt: `<numeStudent>,<codMaterie>,<semestru>,<an>,<dataInscrierii>,<valoareNota>`
+
+professor.txt: `<numeProfesor>,<titluDidactic>,<numeDepartament>`
+
+student.txt: `<numeStudent>,<dataNasterii>,<specializare>`
+
