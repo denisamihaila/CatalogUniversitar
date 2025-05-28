@@ -133,7 +133,6 @@ public final class CatalogService {
             }
 
             audit.log("inregistrare_nota");
-            System.out.println("Nota inregistrata cu id = " + idNota);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -152,11 +151,12 @@ public final class CatalogService {
     }
 
     public double medieStudent(int idStudent) {
-        List<Grade> grades = noteStudent(idStudent);
-        return grades.stream()
+        double avg = noteStudent(idStudent).stream()
                 .mapToDouble(Grade::getValoareNota)
                 .average()
                 .orElse(0.0);
+
+        return Math.floor(avg * 100) / 100.0;
     }
 
     // 10. Căutare cursuri după departament
