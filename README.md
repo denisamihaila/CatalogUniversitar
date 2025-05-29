@@ -30,8 +30,7 @@ Proiect realizat în cadrul materiei Programare Avansată pe Obiecte, în limbaj
 - Fiecare metodă din CatalogService apelată scrie un rând în fișierul de audit
 
 
-## Detalii implementare proiect
-### Fișierele cu date de intrare și structura acestora
+## Structura fișierelor de date (directory data/)
 course.txt: `<codMaterie>,<denumire>,<nrCredite>,<numeDepartament>`
 
 courseOffering.txt: `<codMaterie>,<semestru>,<an>`
