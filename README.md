@@ -9,11 +9,11 @@ Proiect realizat în cadrul materiei Programare Avansată pe Obiecte, în limbaj
 ### 2. Implementare
 - Clase simple cu atribute private/protected și metode de acces, organizate în pachete: Entități, Repositories, Servicii, Utile, Resources
 - Colecții diferite pentru gestionarea obiectelor în memorie:
-  - Map<String, Course> (în CourseRepo) pentru acces rapid la materii după cod
-  - Map<Integer, CourseOffering> (în CourseOfferingRepo) cu TreeMap pentru oferte sortate după ID
-  - Set<Enrollment> în Student pentru a evita duplicatele de înscriere
-  - List<Grade> pentru notele unui student, păstrând ordinea adăugării
-  - List<CourseOffering> în DataLoader pentru încărcarea inițială secvențială.
+  - `Map<String, Course>` (în CourseRepo) pentru acces rapid la materii după cod
+  - `Map<Integer, CourseOffering>` (în CourseOfferingRepo) cu TreeMap pentru oferte sortate după ID
+  - `Set<Enrollment>` în Student pentru a evita duplicatele de înscriere
+  - `List<Grade>` pentru notele unui student, păstrând ordinea adăugării
+  - `List<CourseOffering>` în DataLoader pentru încărcarea inițială secvențială.
 - Moștenire: Person ca superclasă pentru Student și Professor
 - Singleton: Serviciu unic CatalogService care expune operațiunile sistemului
 - Clasa Main: interacțiune console (meniu), citire input și apeluri către CatalogService
