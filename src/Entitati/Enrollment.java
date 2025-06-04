@@ -22,16 +22,8 @@ public class Enrollment {
         this.idInscriere = idInscriere;
     }
 
-    public void setIdInscriere(int idInscriere) {
-        this.idInscriere = idInscriere;
-    }
-
     public void adaugaNota(Grade g) {
         note.add(g);
-    }
-
-    public List<Grade> getNote() {
-        return note;
     }
 
     public int getIdInscriere() {

@@ -91,6 +91,7 @@ public class CourseOfferingDao {
         }
     }
 
+    // READ by semestru & an
     public List<CourseOffering> findBySemestruAndAn(int semestru, int an) throws SQLException {
         String sql = "SELECT * FROM course_offering WHERE semestru = ? AND an = ?";
         List<CourseOffering> list = new ArrayList<>();

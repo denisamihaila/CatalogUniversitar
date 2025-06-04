@@ -15,18 +15,6 @@ public class Grade {
         this.idNota = idNota;
     }
 
-    public void setIdNota(int idNota) {
-        this.idNota = idNota;
-    }
-
-    public int getIdNota() {
-        return idNota;
-    }
-
-    public Enrollment getInscriere() {
-        return inscriere;
-    }
-
     public double getValoareNota() {
         return valoareNota;
     }

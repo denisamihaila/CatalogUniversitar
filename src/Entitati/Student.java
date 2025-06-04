@@ -28,30 +28,12 @@ public class Student extends Person implements Comparable<Student> {
         inscrieri.add(e);
     }
 
-    public void stergeInscriere(Enrollment e) {
-        inscrieri.remove(e);
-    }
-
-    public List<Grade> getNote() {
-        List<Grade> note = new ArrayList<>();
-        inscrieri.forEach(e -> note.addAll(e.getNote()));
-        return note;
-    }
-
-    public double calculeazaMedie() {
-        return getNote().stream().mapToDouble(Grade::getValoareNota).average().orElse(0.0);
-    }
-
     public LocalDate getDataNasterii() {
         return dataNasterii;
     }
 
     public String getSpecializare() {
         return specializare;
-    }
-
-    public Set<Enrollment> getInscrieri() {
-        return inscrieri;
     }
 
     @Override

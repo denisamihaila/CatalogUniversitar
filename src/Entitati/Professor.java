@@ -24,10 +24,6 @@ public class Professor extends Person {
         return titluDidactic;
     }
 
-    public void setTitluDidactic(String titluDidactic) {
-        this.titluDidactic = titluDidactic;
-    }
-
     public Department getDepartment() {
         return department;
     }

@@ -15,10 +15,11 @@ public class DepartmentDao {
         try (PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, d.getNumeDepartament());
             ps.setString(2, d.getFacultate());
-            ps.executeUpdate();
+            ps.executeUpdate(); //execută instrucțiunea SQL (INSERT)
             try (ResultSet rs = ps.getGeneratedKeys()) {
+                //dacă există cel puțin o cheie generată
                 if (rs.next()) {
-                    d.setIdDepartament(rs.getInt(1));
+                    d.setIdDepartament(rs.getInt(1)); //id-ul generat de DB
                 }
             }
         }
@@ -59,6 +60,7 @@ public class DepartmentDao {
         return list;
     }
 
+    // READ by name
     public Department findByName(String numeDepartament) throws SQLException {
         String sql = "SELECT * FROM department WHERE nume_departament = ?";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {

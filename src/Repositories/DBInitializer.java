@@ -22,7 +22,7 @@ public final class DBInitializer {
             st.execute("CREATE TABLE department ("
                     + "id_departament INT PRIMARY KEY AUTO_INCREMENT,"
                     + "nume_departament VARCHAR(100) NOT NULL,"
-                    + "facultate VARCHAR(100) NOT NULL) ENGINE=InnoDB");
+                    + "facultate VARCHAR(100) NOT NULL) ENGINE=InnoDB"); //InnoDB este motorul de stocare recomandat
 
             st.execute("CREATE TABLE course ("
                     + "cod_materie VARCHAR(10) PRIMARY KEY,"
@@ -75,7 +75,7 @@ public final class DBInitializer {
                     + " ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB");
 
         } catch (SQLException e) {
-            throw new RuntimeException("Eroare la initializarea bazei de date", e);
+            throw new RuntimeException("Eroare la inițializarea bazei de date", e);
         }
     }
 }

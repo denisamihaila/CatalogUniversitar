@@ -25,13 +25,13 @@ public class EnrollmentDao {
             ps.setDate(3, Date.valueOf(e.getDataInscrierii()));
             int affected = ps.executeUpdate();
             if (affected == 0) {
-                throw new SQLException("Inserare enrollment eșuată, niciun rând afectat.");
+                throw new SQLException("Inserare enrollment eșuată, niciun rând afectat");
             }
             try (ResultSet rs = ps.getGeneratedKeys()) {
                 if (rs.next()) {
                     return rs.getInt(1);
                 } else {
-                    throw new SQLException("Inserare enrollment eșuată, nu s-a obținut ID-ul.");
+                    throw new SQLException("Inserare enrollment eșuată, nu s-a obținut ID-ul");
                 }
             }
         }
@@ -78,7 +78,7 @@ public class EnrollmentDao {
         }
     }
 
-    // CREATE
+    // CREATE - atribuim o notă unei înscrieri
     public int insertGrade(int idInscriere, double valoareNota) throws SQLException {
         String sql = "INSERT INTO grade (id_inscriere, valoare_nota) VALUES (?, ?)";
         try (PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -87,26 +87,24 @@ public class EnrollmentDao {
             int affected = ps.executeUpdate();
 
             if (affected == 0) {
-                throw new SQLException("Inserare grade eșuată, niciun rând afectat.");
+                throw new SQLException("Inserare grade eșuată, niciun rând afectat");
             }
 
             try (ResultSet rs = ps.getGeneratedKeys()) {
                 if (rs.next()) {
                     return rs.getInt(1);
                 } else {
-                    throw new SQLException("Inserare grade eșuată, nu s-a obținut ID-ul notei.");
+                    throw new SQLException("Inserare grade eșuată, nu s-a obținut ID-ul notei");
                 }
             }
         }
     }
 
     public List<Grade> findGradesByStudentId(int idStudent) throws SQLException {
-        String sql = """
-        SELECT g.id_nota, g.id_inscriere, g.valoare_nota
-        FROM grade g
-        JOIN enrollment e ON g.id_inscriere = e.id_inscriere
-        WHERE e.id_student = ?
-    """;
+        String sql = "SELECT g.id_nota, g.id_inscriere, g.valoare_nota "
+                    +"FROM grade g "
+                    +"JOIN enrollment e ON g.id_inscriere = e.id_inscriere "
+                    +"WHERE e.id_student = ?";
         List<Grade> list = new ArrayList<>();
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, idStudent);
@@ -123,11 +121,7 @@ public class EnrollmentDao {
         return list;
     }
 
-    public Integer findIdByStudentCourseDate(String numeStudent,
-                                             String codMaterie,
-                                             int semestru,
-                                             int an,
-                                             LocalDate dataInscrierii)
+    public Integer findIdByStudentCourseDate(String numeStudent, String codMaterie, int semestru, int an, LocalDate dataInscrierii)
             throws SQLException {
         String sql = "SELECT e.id_inscriere " +
                 "FROM enrollment e " +
@@ -156,7 +150,6 @@ public class EnrollmentDao {
             ps.setInt(1, id);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    // Obține student și ofertă prin DAO-urile lor
                     StudentDao studentDao = new StudentDao();
                     CourseOfferingDao offeringDao = new CourseOfferingDao();
                     int studentId = rs.getInt("id_student");

@@ -18,10 +18,10 @@ public final class DBConnection {
         try {
             connection = DriverManager.getConnection(URL, USER, PASS);
         } catch (SQLException e) {
-            throw new RuntimeException("Nu pot crea conexiunea la baza de date!", e);
+            throw new RuntimeException("Nu s-a putut realiza conexiunea la baza de date!", e);
         }
     }
-
+    // Clasă Singleton
     public static DBConnection getInstance() {
         if (instance == null) instance = new DBConnection();
         return instance;

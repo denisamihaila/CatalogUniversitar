@@ -127,7 +127,7 @@ public class DataLoader {
         for (String line : lines) {
             String[] f = line.split(",");
             if (f.length < 6) {
-                System.err.println("  → Linia are prea puține câmpuri!");
+                System.err.println("Linia are prea puține câmpuri!");
                 continue;
             }
 
@@ -143,7 +143,7 @@ public class DataLoader {
                 date = LocalDate.parse(f[4].trim());
                 val  = Double.parseDouble(f[5].trim());
             } catch (Exception ex) {
-                System.err.println("  → Eroare de parsare pentru linia: " + line);
+                System.err.println("Eroare de parsare pentru linia: " + line);
                 continue;
             }
 
@@ -153,10 +153,10 @@ public class DataLoader {
                 if (idIns != null) {
                     int idNota = service.inregistrareNota(idIns, val);
                 } else {
-                    System.err.println("  → NU s-a găsit înscriere pentru: " + line);
+                    System.err.println("NU s-a găsit înscriere pentru: " + line);
                 }
             } catch (SQLException ex) {
-                System.err.println("  → Eroare JDBC pentru linia: " + line);
+                System.err.println("Eroare JDBC pentru linia: " + line);
                 ex.printStackTrace();
             }
         }
@@ -167,7 +167,7 @@ public class DataLoader {
         try {
             return Files.readAllLines(Paths.get(DIR + fileName));
         } catch (IOException e) {
-            throw new RuntimeException("Cannot read file: " + fileName, e);
+            throw new RuntimeException("Nu se poate citi fișierul: " + fileName, e);
         }
     }
 }
