@@ -54,4 +54,33 @@ Alegem de la tastatură opțiunea 1. Introducem un id dtudent inexistent, de exe
 alegem o dată de înscriere oarecare. Primim mesajul „Inscriere realizata: id=21”. Pentru a verifica, intrăm în 
 MySQL Workbench și rulăm „select * from enrollment;”. Vedem că ultima înscriere este cea cu id=21.
 ### 2. Retragere student din curs
-Alegem opțiunea 2. 
+Alegem opțiunea 2. Încercăm un id ofertă inexistent (100) și primim mesajul: „Eroare: Nu există înscriere cu id=100”.
+Apoi alegem un id existent (select * from enrollment;) și observăm că este eliminat din baza de date.
+### 3. Listare cursuri pentru semestru și an
+Alegem opțiunea 3. Selectăm un semstru dintre cele valide(1,2) și un an(1,2,3,4) și obținem toate cursurile disponibile.
+De asemenea, dacă nu alegem un semestru sau un an valid, vom primi un mesaj cum că nu există oferte.
+### 4. Atribuire profesor la curs
+Alegem opțiunea 4. Pentru a vedea profesorii existenți rulăm în MySQL Workbench comanda „select * from professor;”, 
+iar pentru cursuri, comanda „select * from course;”. Alegem câte un id existent pentru fiecare și rulăm comanda 
+„select * from course_offering;” pentru a vedea că s-a efectuat atribuirea.
+### 5. Adaugare materie in catalog
+Alegem opțiunea 5. Completăm informațiile necesare și vom găsi adăugat în tabela course noul nostru curs. Atenție să 
+scrieți denumirea întocmai a departamentului (Informatica/CTI/Matematica)
+### 6. Modificare credite materie
+Alegem opțiunea 6. Pentru a vedea codurile materiilor, ne uităm în tabela course. Apoi, alegem noul număr de credite
+pe care vrem să îl aibă materia respectivă.
+### 7. Vizualizare studenti inscrisi la curs
+Alegem opțiunea 7. Apoi alegem un id din tabela course_offering și vom primi lista studenților înscriși la acel curs.
+### 8. Înregistrare notă pentru student
+Alegem opțiunea 8. Alegem un id inscriere existent (ex:1). Dacă alegem o notă care nu este în intervalul 0-10, 
+primim un mesaj corespunzător. Pentru a verifica noua notă, o putem găsi în tabela grade, la final.
+### 9. Listare note și medie student
+Alegem opțiunea 9. Selectăm un id student inexistent(cei cu id-urile 1 și 2 au cele mai multe note în baza de date)
+și ni se vor lista toate notele lor, iar apoi și media acestora, obținută prin tăiere, cu două zecimale.
+### 10. Căutare cursuri după departament
+Alegem opțiunea 10. Alegem numele unui departament (Informatica/CTI/Matematica) și obținem toate cursurile care 
+fac parte din acel departament. Dacă introducem un departament inexistent, primim un mesaj corespunzător. 
+### 0. Iesire
+Pentru a închide aplicația, apăsăm tasta 0, urmată de Enter.
+De asemenea, dacă nu alegem o opțiune existentă, primim următorul mesaj: 
+„Opțiune invalidă. Alege un număr între 0 și 10.”. 
