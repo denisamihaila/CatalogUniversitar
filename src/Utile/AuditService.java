@@ -5,8 +5,9 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.time.LocalDateTime;
 
+import static Utile.Constante.FILE_AUDIT;
+
 public final class AuditService {
-    private static final String FILE = "Resources/audit.csv";
     private static AuditService instance;
     private AuditService() {}
 
@@ -17,10 +18,10 @@ public final class AuditService {
 
     public void log(String actiune) {
         try {
-            Path path = Paths.get(FILE);
+            Path path = Paths.get(FILE_AUDIT);
             Files.createDirectories(path.getParent());
 
-            try (FileWriter fw = new FileWriter(FILE, true)) {
+            try (FileWriter fw = new FileWriter(FILE_AUDIT, true)) {
                 fw.write(actiune + "," + LocalDateTime.now() + System.lineSeparator());
             }
         } catch (IOException e) {

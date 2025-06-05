@@ -3,6 +3,7 @@ package Servicii;
 import Entitati.*;
 import Repositories.*;
 import Utile.AuditService;
+import Utile.ExceptieDepartament;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -91,12 +92,19 @@ public final class CatalogService {
         try {
             Department d = departmentDao.findByName(nume);
             if (d == null) {
-                throw new IllegalArgumentException("Nu există departament cu numele '" + nume + "'");
+                //throw new IllegalArgumentException("Nu există departament cu numele '" + nume + "'");
+                // exceptie departament inexistent
+                throw new ExceptieDepartament("Nu există departament cu numele '" + nume + "'");
             }
             return d;
-        } catch (SQLException ex) {
-            throw new RuntimeException("Eroare BD la getDepartmentByName", ex);
         }
+        catch (ExceptieDepartament ex) {
+            System.out.println(ex.getMessage());
+        }
+        catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return null;
     }
 
     // 1. Înscriere student la curs cu dată
