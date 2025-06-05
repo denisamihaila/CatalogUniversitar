@@ -9,17 +9,13 @@ Proiect realizat în cadrul materiei Programare Avansată pe Obiecte, în limbaj
 ### 2. Implementare
 - Clase simple cu atribute private/protected și metode de acces, organizate în pachete: Entități, Repositories, Servicii, Utile, Resources
 - Colecții diferite pentru gestionarea obiectelor în memorie:
-  - `Set<Enrollment>` în Student pentru a evita duplicatele de înscriere
-  - `List<Grade>` în Enrollment pentru notele unui student, păstrând ordinea adăugării
-  - `List<CourseOffering>` în DataLoader pentru încărcarea inițială secvențială.
-  - `List<Classroom>` în CourseOffering
-  - `List<Course>` în CourseDao
-  - `List<CourseOffering>` in CourseOfferingDao
-  - `List<Department>` in DepartmentDao
-  - `List<Enrollment>` in EnrollmentDao
-  - `List<Professor>` in ProfessorDao
-  - `List<Student>` in StudentDao
-  - `Map<Integer, Student>`, `Map<Integer, Professor>`, `Map<Integer, Enrollment>` in CatalogService
+  - `HashSet<Enrollment>` în Student pentru a evita duplicatele de înscriere
+  - `ArrayList<Grade>` în Enrollment pentru notele unui student, păstrând ordinea adăugării
+  - `ArrayList<CourseOffering>`, `ArrayList<Enrollment>`, `HashMap<String, Department>`, `HashMap<String, Course>`, `HashMap<String, Professor>`, `HashMap<String, Student>` în DataLoader
+  - `ArrayList<Classroom>` în CourseOffering
+  - `ArrayList<Course>` în CourseDao; `ArrayList<CourseOffering>` in CourseOfferingDao; `ArrayList<Department>` in DepartmentDao
+  - `ArrayList<Enrollment>` in EnrollmentDao; `ArrayList<Professor>` in ProfessorDao; `ArrayList<Student>` in StudentDao
+  - `TreeMap<Integer, Student>`(colecție sortată), `HashMap<Integer, Professor>`, `HashMap<Integer, Enrollment>` in CatalogService
 - Moștenire: Person ca superclasă pentru Student și Professor
 - Singleton: Serviciu unic CatalogService care expune operațiunile sistemului
 - Clasa Main: interacțiune console (meniu), citire input și apeluri către CatalogService
