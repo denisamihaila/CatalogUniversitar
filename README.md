@@ -47,3 +47,11 @@ professor.txt: `<numeProfesor>,<titluDidactic>,<numeDepartament>`
 
 student.txt: `<numeStudent>,<dataNasterii>,<specializare>`
 
+## Exemplu de rulare și testare a tuturor funcționalităților
+### 1. Înscriere student la curs
+Alegem de la tastatură opțiunea 1. Introducem un id dtudent inexistent, de exemplu 100. Primim următorul mesaj: 
+„Eroare: Nu există student cu id=100”. Acum introducem id-uri valide. Exemplu: id student = 1, id oferta = 5 și 
+alegem o dată de înscriere oarecare. Primim mesajul „Inscriere realizata: id=21”. Pentru a verifica, intrăm în 
+MySQL Workbench și rulăm „select * from enrollment;”. Vedem că ultima înscriere este cea cu id=21.
+### 2. Retragere student din curs
+Alegem opțiunea 2. 

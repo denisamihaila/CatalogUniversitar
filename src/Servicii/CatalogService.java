@@ -121,6 +121,7 @@ public final class CatalogService {
     // 2. Retragere student din curs
 
     public void retragereStudentDinCurs(int idInscriere) {
+        Enrollment e = findEnrollmentById(idInscriere);
         try {
             enrollmentDao.delete(idInscriere);
         } catch (SQLException ex) {
