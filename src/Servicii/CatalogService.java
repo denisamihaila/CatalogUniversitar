@@ -9,12 +9,13 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 
 public final class CatalogService {
     private static CatalogService instance; // Singleton
 
-    private final Map<Integer, Student> studenti = new HashMap<>();
+    private final Map<Integer, Student> studenti = new TreeMap<>();
     private final Map<Integer, Professor> profesori = new HashMap<>();
     private final Map<Integer, Enrollment> inscrieri = new HashMap<>();
 
