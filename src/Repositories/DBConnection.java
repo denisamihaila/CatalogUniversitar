@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 
 public final class DBConnection {
-
+    // Clasă Singleton
     private static final String URL  = "jdbc:mysql://localhost:3306/proiect_schema";
     private static final String USER = "root";
     private static final String PASS = "deni12345";
@@ -21,7 +21,7 @@ public final class DBConnection {
             throw new RuntimeException("Nu s-a putut realiza conexiunea la baza de date!", e);
         }
     }
-    // Clasă Singleton
+
     public static DBConnection getInstance() {
         if (instance == null) instance = new DBConnection();
         return instance;
